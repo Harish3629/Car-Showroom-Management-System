@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Register | DriveX Showroom</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">DRIVEX</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cars.html">Cars</a></li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="form-container" style="max-width: 500px;">
+            <h2 style="text-align: center; color: var(--primary-red);">Join DriveX</h2>
+            <p style="text-align: center; font-size: 0.9rem; color: #bbb;">Sign up to book test drives and track your dream cars.</p>
+            
+            <form action="login.html" method="POST">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label>Full Name</label>
+                        <input type="text" placeholder="John Doe" required>
+                    </div>
+                    <div>
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+1 234 567 890" required>
+                    </div>
+                </div>
+
+                <label>Email Address</label>
+                <input type="email" placeholder="example@mail.com" required>
+                
+                <label>Create Password</label>
+                <input type="password" placeholder="Min. 8 characters" required>
+                
+                <label>Confirm Password</label>
+                <input type="password" placeholder="Repeat password" required>
+
+                <p style="font-size: 0.75rem; color: #888; margin-bottom: 15px;">
+                    By clicking Register, you agree to our Terms of Service and Privacy Policy.
+                </p>
+
+                <button type="submit" class="btn">Create Account</button>
+            </form>
+
+            <p style="text-align: center; margin-top: 20px; font-size: 0.9rem;">
+                Already a member? <a href="login.html" style="color: var(--primary-red); font-weight: bold;">Login here</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
