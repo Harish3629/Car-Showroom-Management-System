@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login | DriveX Showroom</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">DRIVEX</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cars.html">Cars</a></li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <h2 style="text-align: center; color: var(--primary-red);">Account Login</h2>
+            <p style="text-align: center; font-size: 0.9rem; color: #bbb;">Enter your credentials to access your dashboard.</p>
+            
+            <form action="dashboard.html" method="POST">
+                <label>Email Address</label>
+                <input type="email" placeholder="admin@drivex.com" required>
+                
+                <label>Password</label>
+                <input type="password" placeholder="••••••••" required>
+                
+                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 15px;">
+                    <label><input type="checkbox" style="width: auto; margin-right: 5px;"> Remember Me</label>
+                    <a href="#" style="color: var(--primary-red); text-decoration: none;">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn">Login to Account</button>
+            </form>
+
+            <p style="text-align: center; margin-top: 20px; font-size: 0.9rem;">
+                Don't have an account? <a href="register.html" style="color: var(--primary-red); font-weight: bold;">Create one</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
