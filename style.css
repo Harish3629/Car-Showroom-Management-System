@@ -1,0 +1,282 @@
+/* --- Global Variables & Reset --- */
+:root {
+    --primary: #e74c3c;      /* Indian Racing Red */
+    --primary-hover: #c0392b;
+    --dark-bg: #0f0f0f;      /* Deep Black */
+    --card-bg: #1a1a1a;      /* Slate Grey */
+    --glass: rgba(255, 255, 255, 0.05);
+    --text-main: #ffffff;
+    --text-dim: #b3b3b3;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Navigation --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--text-main);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li { margin: 0 20px; }
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--primary);
+}
+
+.nav-btn {
+    background: var(--primary);
+    padding: 10px 22px;
+    border-radius: 5px;
+    color: white !important;
+}
+
+/* --- Hero Section --- */
+.hero-long {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.highlight {
+    color: var(--primary);
+    text-shadow: 0 0 20px rgba(231, 76, 60, 0.4);
+}
+
+.badge {
+    display: inline-block;
+    background: var(--primary);
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+/* --- Buttons --- */
+.btn, .btn-outline, .btn-sm {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn { background: var(--primary); color: white; margin-right: 15px; }
+.btn:hover { background: var(--primary-hover); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3); }
+
+.btn-outline { border: 2px solid white; color: white; }
+.btn-outline:hover { background: white; color: black; }
+
+.btn-sm { width: 100%; text-align: center; background: #333; color: white; padding: 10px; }
+.btn-sm:hover { background: var(--primary); }
+
+/* --- Stats Bar --- */
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: #000;
+    padding: 50px 8%;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.stat-item h3 { font-size: 2.2rem; color: var(--primary); margin-bottom: 5px; }
+.stat-item p { color: var(--text-dim); font-size: 0.9rem; letter-spacing: 1px; }
+
+/* --- Grid & Cards --- */
+.container { padding: 80px 8%; }
+
+.section-title { text-align: center; margin-bottom: 60px; }
+.section-title h2 { font-size: 2.5rem; margin-bottom: 10px; }
+.section-title p { color: var(--text-dim); }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.car-card, .brand-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #333;
+    transition: var(--transition);
+}
+
+.car-card:hover, .brand-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+/* --- BRAND LOGO ADJUSTMENTS --- */
+.brand-logo-box {
+    background: #ffffff; /* White background to make all brand logos look uniform */
+    height: 180px;       /* Fixed height so cards align perfectly */
+    display: flex;       /* Flexbox to center the logo image */
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    overflow: hidden;
+    border-bottom: 1px solid #333;
+}
+
+.brand-logo-box img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Prevents stretching and keeps original logo proportions */
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+    transition: var(--transition);
+}
+
+.brand-card:hover .brand-logo-box img {
+    transform: scale(1.08); /* Subtle zoom effect on the logo */
+}
+
+.car-card:hover img { transform: scale(1.05); }
+
+.price-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+.card-info { padding: 25px; }
+.card-info h3 { margin-bottom: 15px; font-size: 1.3rem; }
+
+.specs {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 25px 0;
+    padding: 0 10px;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+}
+
+.specs i { color: var(--primary); margin-right: 5px; }
+
+/* --- Features Section --- */
+.features { background: #050505; padding: 100px 8%; }
+.feature-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+.feature-image img { width: 100%; border-radius: 20px; }
+.feature-list { list-style: none; margin-top: 30px; }
+.feature-list li { margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; }
+.feature-list i { color: var(--primary); margin-right: 15px; font-size: 1.4rem; }
+
+/* --- Forms (Login/Register) --- */
+.form-container {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 450px;
+    margin: 50px auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-dim); }
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    background: #252525;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+}
+
+input:focus { border-color: var(--primary); }
+
+/* --- Footer --- */
+footer { background: #000; padding: 80px 8% 20px; border-top: 1px solid #222; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
+.footer-links h4, .footer-contact h4 { margin-bottom: 20px; color: var(--primary); text-transform: uppercase; font-size: 0.9rem; }
+.footer-links a { display: block; color: var(--text-dim); text-decoration: none; margin-bottom: 12px; font-size: 0.9rem; }
+.footer-links a:hover { color: var(--primary); }
+.footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid #111; color: #444; font-size: 0.8rem; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .stats-bar, .feature-grid, .footer-grid { grid-template-columns: 1fr; }
+    nav ul { display: none; } /* Mobile menu would go here */
+    .hero-content h1 { font-size: 2.5rem; }
+    .brand-logo-box { height: 140px; } /* Slightly smaller logos on mobile */
+}
